@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85bae590-2f3e-4511-b157-0e4d8c1891a8" name="Changes" comment="Initial project commit">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OpDist.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/appl/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/appl/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/appl/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +34,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/patri/Documents/UFOP/[BCC447] Programação Paralela/TP1/OpDist&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/patri/Documents/UFOP/[BCC447] Programação Paralela/TP1/ParallelReduce&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
@@ -58,8 +53,17 @@
       <workItem from="1659802057087" duration="20000" />
       <workItem from="1659808247482" duration="17000" />
       <workItem from="1659808274752" duration="143000" />
-      <workItem from="1659808433497" duration="5390000" />
+      <workItem from="1659808433497" duration="5442000" />
+      <workItem from="1659827956879" duration="4849000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial project commit">
+      <created>1659827870071</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1659827870071</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -75,5 +79,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial project commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial project commit" />
   </component>
 </project>
