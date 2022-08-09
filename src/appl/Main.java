@@ -2,10 +2,7 @@ package appl;
 
 import core.MapReduce;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -45,6 +42,5 @@ public class Main {
 
         long min_tempo = Arrays.stream(tempos).min().getAsLong();
         System.out.println("Menor tempo: " + min_tempo + "ns");
-
     }
 }

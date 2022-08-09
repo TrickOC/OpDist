@@ -9,7 +9,6 @@ import java.util.concurrent.Future;
 public class MapReduce {
     private final List<List<Integer>> segments;
     private final int partitions;
-
     ExecutorService pool;
 
     public MapReduce() {
@@ -55,9 +54,11 @@ public class MapReduce {
     }
 
     private Future<List<Integer>> processSegments() {
-        return segments.isEmpty() ?
-                null :
-                pool.submit(new GenericReduce(segments.remove(0), segments.remove(0)));
+        try {
+            return pool.submit(new GenericReduce(segments.remove(0), segments.remove(0)));
+        } catch (Exception e) {
+            return null;
+        }
     }
 
 }

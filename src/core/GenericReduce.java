@@ -17,8 +17,6 @@ public class GenericReduce implements Callable<List<Integer>> {
 
     @Override
     public List<Integer> call() {
-        //we can improve for a generic solution....
-        //sum, min, max, sort and many more reduce types
         return SumReduce.reduce(args1, args2);
     }
 
