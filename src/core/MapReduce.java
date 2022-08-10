@@ -20,9 +20,15 @@ public class MapReduce {
 
     public void mapInput(List<Integer> input) {
         int partitionSize = input.size() / partitions;
-        System.out.println("Partition size: " + partitionSize + " in " + partitions + " partitions");
-        for (int i = 0; i < input.size(); i += partitionSize)
-            segments.add(input.subList(i, i + partitionSize));
+        if (input.size() % partitions > 0)
+            partitionSize++;
+        //System.out.println("Partition size: " + partitionSize + " in " + partitions + " partitions");
+        for (int i = 0; i < input.size(); i += partitionSize) {
+            if (i + partitionSize < input.size())
+                segments.add(input.subList(i, i + partitionSize));
+            else
+                segments.add(input.subList(i, input.size()));
+        }
     }
 
     public long parallelReduce() {
@@ -33,7 +39,7 @@ public class MapReduce {
             while ((result = processSegments()) != null)
                 results.add(result);
 
-            System.out.println("results of segments... " + results.size());
+            //System.out.println("results of segments... " + results.size());
 
             try {
                 for (Future<List<Integer>> r:results) {
@@ -42,7 +48,7 @@ public class MapReduce {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            System.out.println("step of segments finished");
+            //System.out.println("step of segments finished");
             results.clear();
         }
         pool.shutdown();
