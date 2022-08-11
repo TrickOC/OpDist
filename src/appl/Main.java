@@ -9,25 +9,34 @@ public class Main {
         List<Integer> input = new LinkedList<>();
         Random r = new Random(4228);
         long initial, soma;
-        long[] tempos = new long[3];
+        long[] tempos = new long[4];
 
         for (int i = 0; i < 10000000; ++i)
-            input.add(r.nextInt(1000));
+            input.add(r.nextInt(100));
 
-        System.out.println("Soma single thread com reduce e sum:");
+        soma = 0;
+        System.out.println("Soma for da massa:");
         initial = System.currentTimeMillis();
-        soma = input.stream().reduce(0, Integer::sum, Integer::sum);
+        for (Integer integer : input) soma += integer;
         tempos[0] = System.currentTimeMillis() - initial;
         System.out.println("Total da soma: " + soma);
         System.out.println("Tempo da soma: " + tempos[0] + "ms");
         System.out.println();
 
-        System.out.println("Soma multi threads com reduce e sum:");
+        System.out.println("Soma stream com reduce e sum:");
         initial = System.currentTimeMillis();
-        soma = input.parallelStream().reduce(0, Integer::sum, Integer::sum);
+        soma = input.stream().reduce(0, Integer::sum, Integer::sum);
         tempos[1] = System.currentTimeMillis() - initial;
         System.out.println("Total da soma: " + soma);
         System.out.println("Tempo da soma: " + tempos[1] + "ms");
+        System.out.println();
+
+        System.out.println("Soma parallelStream com reduce e sum:");
+        initial = System.currentTimeMillis();
+        soma = input.parallelStream().reduce(0, Integer::sum, Integer::sum);
+        tempos[2] = System.currentTimeMillis() - initial;
+        System.out.println("Total da soma: " + soma);
+        System.out.println("Tempo da soma: " + tempos[2] + "ms");
         System.out.println();
 
         System.out.println("Soma multi threads com map reduce:");
@@ -35,9 +44,9 @@ public class Main {
         MapReduce mr = new MapReduce();
         mr.mapInput(input);
         soma = mr.parallelReduce();
-        tempos[2] = System.currentTimeMillis() - initial;
+        tempos[3] = System.currentTimeMillis() - initial;
         System.out.println("Total da soma: " + soma);
-        System.out.println("Tempo da soma: " + tempos[2] + "ms");
+        System.out.println("Tempo da soma: " + tempos[3] + "ms");
         System.out.println();
 
         long min_tempo = Arrays.stream(tempos).min().getAsLong();
