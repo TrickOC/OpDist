@@ -29,6 +29,8 @@ public class MapReduce {
             else
                 segments.add(input.subList(i, input.size()));
         }
+        if (partitionSize % 2 > 0)
+            segments.add(new LinkedList<>());
     }
 
     public long parallelReduce() {
